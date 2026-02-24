@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asma Aouichat | AI Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg-dark:#050505;
+  --primary:#00f5ff;
+  --secondary:#8a2eff;
+  --glass:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.12);
+  --text-light:#ffffff;
+  --text-muted:#b3b3b3;
+}
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background: radial-gradient(circle at 20% 20%, #0f0f2b, #050505 65%);
+  color:var(--text-light);
+  overflow-x:hidden;
+}
+
+/* GRID OVERLAY */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:40px 40px;
+  z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  position:fixed;
+  width:100%;
+  backdrop-filter:blur(14px);
+  background:rgba(0,0,0,0.45);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+nav h1{
+  font-family:'Orbitron',sans-serif;
+  color:var(--primary);
+  letter-spacing:2px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:28px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:var(--text-muted);
+  transition:0.3s ease;
+  font-size:15px;
+}
+
+nav ul li a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 8% 60px;
+}
+
+.hero-container{
+  display:flex;
+  align-items:center;
+  gap:90px;
+  max-width:1200px;
+}
+
+/* Portrait optimized image frame */
+
+.hero img{
+  width:500px;
+  height:650px;
+  object-fit:cover;
+ 
+  
+  box-shadow:
+    0 0 25px rgba(0,245,255,0.35),
+    0 0 60px rgba(0,245,255,0.15);
+  transition:0.45s ease;
+}
+
+.hero img:hover{
+  transform:scale(1.03);
+  box-shadow:
+    0 0 40px rgba(0,245,255,0.45),
+    0 0 80px rgba(138,46,255,0.25);
+}
+
+/* TEXT */
+
+.hero-text h2{
+  font-size:56px;
+  font-family:'Orbitron',sans-serif;
+  line-height:1.2;
+}
+
+.hero-text span{
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  color:var(--text-muted);
+  margin:22px 0;
+  max-width:520px;
+  line-height:1.6;
+}
+
+/* BUTTONS */
+
+.btn{
+  padding:13px 30px;
+  border-radius:32px;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  text-decoration:none;
+  margin-right:16px;
+  transition:0.35s ease;
+  display:inline-block;
+}
+
+.btn:hover{
+  background:var(--primary);
+  color:black;
+  box-shadow:0 0 22px var(--primary);
+}
+
+/* SECTIONS */
+
+section{
+  padding:120px 8%;
+}
+
+.section-title{
+  font-size:34px;
+  margin-bottom:60px;
+  font-family:'Orbitron',sans-serif;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* GLASS CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--border);
+  padding:32px;
+  border-radius:22px;
+  transition:0.4s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:var(--primary);
+  box-shadow:0 0 30px rgba(0,245,255,0.25);
+}
+
+.card h3{
+  margin-bottom:16px;
+  color:var(--primary);
+}
+
+.card p{
+  color:var(--text-muted);
+  font-size:15px;
+  line-height:1.5;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+}
+
+.contact a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px;
+  border-top:1px solid var(--border);
+  color:var(--text-muted);
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  nav{
+    padding:18px 6%;
+  }
+
+  .hero-container{
+    flex-direction:column;
+    text-align:center;
+    gap:50px;
+  }
+
+  .hero img{
+    width:240px;
+    height:240px;
+  }
+
+  .hero-text h2{
+    font-size:40px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Asma.AI</h1>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-container">
+
+   
+    <div class="hero-text">
+      <h2>Asma <span>Aouichat</span></h2>
+
+      <p>
+        PhD Candidate in AI | Senior Software Developer | NLP Specialist
+      </p>
+
+      <p>
+        Building intelligent systems, scalable architectures, and AI-driven applications with clean engineering principles.
+      </p>
+
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+	 <img src="photo.png" alt="Asma Aouichat Portrait">
+
+
+  </div>
+</div>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="card">
+<p>
+Software Engineer and AI Researcher with 10+ years of experience.
+Specialized in NLP, Machine Learning, and advanced system design.
+Bridging academic research with real-world implementation through clean architecture and performance-focused development.
+</p>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Arabic Question Answering System</h3>
+<p>Hybrid SVM + CNN architecture for advanced Arabic NLP classification and semantic processing.</p>
+</div>
+
+<div class="card">
+<h3>Warehouse Management System</h3>
+<p>OOP-based C# system with XML storage and dynamic reporting.</p>
+</div>
+
+<div class="card">
+<h3>Restaurant Management System</h3>
+<p>Business logic modeling with billing and reporting architecture.</p>
+</div>
+
+<div class="card">
+<h3>Full Stack Web Applications</h3>
+<p>Secure dynamic systems built with PHP, MySQL, and modern frontend technologies.</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Programming</h3>
+<p>Python, C#, Java, C++, PHP, JavaScript</p>
+</div>
+
+<div class="card">
+<h3>AI & ML</h3>
+<p>NLP, SVM, CNN, Reinforcement Learning</p>
+</div>
+
+<div class="card">
+<h3>Web & DB</h3>
+<p>HTML, CSS, JS, PHP, MySQL, XML</p>
+</div>
+
+<div class="card">
+<h3>Engineering</h3>
+<p>OOP, UML, Design Patterns, Clean Architecture</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="section-title">Contact</h2>
+
+<p>Email: your.email@example.com</p>
+<p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+<p>GitHub: <a href="#">github.com/yourprofile</a></p>
+</section>
+
+<footer>
+© 2026 Asma Aouichat | AI Engineer & Software Developer
+</footer>
+
+</body>
+</html>
